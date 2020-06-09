@@ -10,7 +10,8 @@ pipeline {
         steps {
             withSonarQubeEnv('sonar') {
                 sh '/opt/maven/bin/mvn clean verify sonar:sonar -Dmaven.test.skip=true'
-            }
+               }
+	   }
         }
 	stage('Quality Gate') {
             steps {
